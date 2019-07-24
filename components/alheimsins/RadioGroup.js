@@ -12,7 +12,7 @@ export default class RadioGroup extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div style={{ display: 'flex', 'justify-content': 'space-between' }} >
         {this.props.children}
       </div>
     )

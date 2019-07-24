@@ -1,0 +1,83 @@
+{
+  "_args": [
+    [
+      "@alheimsins/react-google-charts@1.6.5",
+      "/Users/asadpalekar/Development/personal/bigfive-web"
+    ]
+  ],
+  "_from": "@alheimsins/react-google-charts@1.6.5",
+  "_id": "@alheimsins/react-google-charts@1.6.5",
+  "_inBundle": false,
+  "_integrity": "sha512-rrHxgHfgiMRLLktOHbz+wGP+8i8DPPXTW9okP5AkZ5fAEDJ3BpJPgI2vvLWFmUdI8r8+2DecFfzDnQVpDUb8AQ==",
+  "_location": "/@alheimsins/react-google-charts",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@alheimsins/react-google-charts@1.6.5",
+    "name": "@alheimsins/react-google-charts",
+    "escapedName": "@alheimsins%2freact-google-charts",
+    "scope": "@alheimsins",
+    "rawSpec": "1.6.5",
+    "saveSpec": null,
+    "fetchSpec": "1.6.5"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@alheimsins/react-google-charts/-/react-google-charts-1.6.5.tgz",
+  "_spec": "1.6.5",
+  "_where": "/Users/asadpalekar/Development/personal/bigfive-web",
+  "author": {
+    "name": "Rakan Nimer"
+  },
+  "bugs": {
+    "url": "https://github.com/RakanNimer/react-google-charts/issues"
+  },
+  "dependencies": {
+    "loadjs": "^3.3.1"
+  },
+  "description": "react-google-charts React component",
+  "devDependencies": {
+    "jsdoc": "^3.4.0",
+    "jsdom": "^9.5.0",
+    "microbundle": "^0.4.4",
+    "object-assign": "^4.1.0",
+    "parcel-bundler": "^1.8.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "v8-compile-cache": "^2.0.0"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "files": [
+    "build/"
+  ],
+  "gh-pages-deploy": {
+    "staticpath": "demo/dist/"
+  },
+  "homepage": "https://rakannimer.github.io/react-google-charts/",
+  "keywords": [
+    "react",
+    "google",
+    "charts"
+  ],
+  "license": "MIT",
+  "main": "build/index.js",
+  "name": "@alheimsins/react-google-charts",
+  "peerDependencies": {
+    "react": ">=15.0.0",
+    "react-dom": ">=15.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RakanNimer/react-google-charts.git"
+  },
+  "scripts": {
+    "build": "microbundle",
+    "start": "parcel demo/index.html"
+  },
+  "type": "react-component",
+  "version": "1.6.5"
+}

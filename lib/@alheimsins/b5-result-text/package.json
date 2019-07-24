@@ -1,0 +1,91 @@
+{
+  "_args": [
+    [
+      "@alheimsins/b5-result-text@1.7.1",
+      "/Users/asadpalekar/Development/personal/bigfive-web"
+    ]
+  ],
+  "_from": "@alheimsins/b5-result-text@1.7.1",
+  "_id": "@alheimsins/b5-result-text@1.7.1",
+  "_inBundle": false,
+  "_integrity": "sha512-SHA2dg5csoFqY61xEbLqWsBAJ+oKepw9xR9yT3z/qyZcTX63v+ELZqq7/qgXAlGyMI5z6s3EJOsV2yuexEqfRQ==",
+  "_location": "/@alheimsins/b5-result-text",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@alheimsins/b5-result-text@1.7.1",
+    "name": "@alheimsins/b5-result-text",
+    "escapedName": "@alheimsins%2fb5-result-text",
+    "scope": "@alheimsins",
+    "rawSpec": "1.7.1",
+    "saveSpec": null,
+    "fetchSpec": "1.7.1"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@alheimsins/b5-result-text/-/b5-result-text-1.7.1.tgz",
+  "_spec": "1.7.1",
+  "_where": "/Users/asadpalekar/Development/personal/bigfive-web",
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "bugs": {
+    "url": "https://github.com/alheimsins/b5-result-text/issues"
+  },
+  "contributors": [
+    {
+      "name": "Jonas Enge",
+      "email": "jonas.enge@gmail.com",
+      "url": "https://github.com/maccyber"
+    }
+  ],
+  "description": "Text for big five results score",
+  "devDependencies": {
+    "ava": "1.2.1",
+    "coveralls": "3.0.2",
+    "husky": "1.3.1",
+    "nyc": "13.3.0",
+    "standard": "12.0.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "lib/",
+    "index.js"
+  ],
+  "homepage": "https://github.com/alheimsins/b5-result-text#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "keywords": [
+    "bigfive",
+    "personality",
+    "result"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@alheimsins/b5-result-text",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alheimsins/b5-result-text.git"
+  },
+  "scripts": {
+    "coverage": "nyc ava",
+    "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install",
+    "standard-fix": "standard --fix",
+    "test": "standard && npm audit && ava",
+    "test-offline": "standard && ava"
+  },
+  "version": "1.7.1"
+}

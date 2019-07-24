@@ -29,7 +29,6 @@ const Layout = ({ user, children, t }) => (
     <div className='main'>
       {children}
     </div>
-    <Footer />
     <style jsx global>
       {`
         body {

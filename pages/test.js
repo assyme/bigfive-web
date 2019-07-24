@@ -11,7 +11,7 @@ const httpInstance = axios.create({
   baseURL: publicRuntimeConfig.URL,
   timeout: 8000
 })
-const { getItems: getInventory, getInfo } = require('@alheimsins/b5-johnson-120-ipip-neo-pi-r')
+const { getItems: getInventory, getInfo } = require('./../lib/@alheimsins/b5-johnson-120-ipip-neo-pi-r')
 const getItems = require('../lib/get-items')
 const sleep = require('../lib/sleep')
 
@@ -141,16 +141,13 @@ export default class extends Component {
     return (
       <div style={{ textAlign: 'left' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <LanguageBar switchLanguage={switchLanguage} selectedLanguage={lang} />
+
           <div style={{ textAlign: 'right', fontSize: '12px' }}>
             <Timer start={now} />
           </div>
         </div>
-        <ProgressBar progress={progress} />
-        {
-          restore && <p onClick={this.clearAnswers} style={{ color: '#FF0080', marginTop: '10px', cursor: 'pointer' }}><FaInfoCircle /> Your state is restored from LocalStorage. Click here to start over again.</p>
-        }
-        { items.map(item =>
+        <ProgressBar style={{ 'margin-bottom': '16px' }} progress={progress} />
+        { items.map((item, idx) =>
           <div key={item.id} className={lang === 'ur' ? 'item inverted-text' : 'item'}>
             <div className='question'>
               { item.text }
@@ -163,25 +160,44 @@ export default class extends Component {
           </div>
         )}
         <div className='navigation'>
-          <div style={{ marginRight: '10px' }}>
-            <Button type='submit' value='Back' onClick={handleBack} disabled={!previous} />
-          </div>
+          {/*<div style={{ marginRight: '10px' }}>
+            <Button type='submit' value='Back' onClick={handleBack} disabled={!previous} background={done ? '#FF0080' : '#b99bd9'} border={'none'} />
+          </div>*/}
           <div>
-            <Button type='submit' value={done ? 'See results' : 'Next'} onClick={handleSubmit} background={done ? '#FF0080' : 'black'} border={done ? '1px solid #FF0080' : '1px solid black'} disabled={!next} />
+            <Button type='submit' value={done ? 'See results' : 'Next'} onClick={handleSubmit} background={done ? '#FF0080' : '#b99bd9'} border={'none'} disabled={!next} />
           </div>
         </div>
         <style jsx>
           {`
-            .item {
-              margin-top: 30px;
+            .item:nth-child(even) {
+              background-color: #F2F2F2
             }
+            .item:nth-child(odd) {
+
+            }
+            .item:nth-last-child() {
+              border-bottom: 1px solid #CFCFCF;
+            }
+            .item {
+              padding-top: 15px;
+              padding-bottom: 15px;
+              border: 1px solid #CFCFCF;
+              border-bottom: none;
+            }
+
             .navigation {
               margin-top: 30px;
-              display: inline-flex;
+              display: flex;
+              justify-content: space-around;
             }
             .question {
-              font-size: 28px;
-              margin-bottom: 2px;
+              font-family: "Futura",sans-serif;
+              font-size: 22px;
+              margin-bottom: 12px;
+              margin-top: 12px;
+              text-align: center;
+              color: #727272;
+
             }
             .inverted-text {
               -moz-transform: scale(-1, 1);

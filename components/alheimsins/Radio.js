@@ -1,35 +1,40 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { MdRadioButtonChecked, MdRadioButtonUnchecked } from 'react-icons/md'
+import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md'
+import { FiCheckSquare, FiSquare } from 'react-icons/fi'
 
 export default class Radio extends Component {
   render () {
     const { name, checked, onChange } = this.context.radioGroup
     const choosen = checked === this.props.value
     return [
-      <label key={this.props.value}>
-        <input type='radio' name={name} value={this.props.value} checked={choosen} onChange={onChange} />
+      <label style={{ 'text-align': 'center', 'margin': '16px' }} key={this.props.value}>
+        <input type='radio' name={name} value={this.props.value} checked={choosen} onChange={onChange}/>
         <span className='radios' style={this.props.style}>
-          { choosen
-            ? <span role='radio' className={this.props.color ? `color${this.props.color}` : 'checked'}><MdRadioButtonChecked /></span>
-            : <span role='radio' className='unchecked'><MdRadioButtonUnchecked /></span>
+          {choosen
+            ? <span role='radio' className={this.props.color ? `color${this.props.color}` : 'checked'}>
+              <MdCheckBox size='28'/></span>
+            : <span role='radio' className='unchecked'><MdCheckBoxOutlineBlank color={'#727272'} size='28'/></span>
           }
-            &nbsp;
-          {this.props.text}
         </span>
+        <div className={'answer'} style={{ 'font-size': '11px', 'color': '#727272', 'font-family': '"helvetica",sans-serif' }}>
+          {this.props.text === 'Neither Accurate Nor Inaccurate' ? 'Neutral' : this.props.text}
+        </div>
         <style jsx>
           {`
             input {
               display: none;
             }
+            .answer {
+
+            }
             .radios {
               cursor: pointer;
-              margin-right: 5px;
             }
             .checked {
               color: ${this.props.checkedColor || 'black'}
             }
-            .color5 { color: #FF0080 }
+            .color5 { color: #b99bd9 }
             .color4 { color: #FF47A3 }
             .color3 { color: #FF70B8 }
             .color2 { color: #FF85C2 }

@@ -13,6 +13,7 @@ export default ({ progress }) => (
           border: 1px;
           border-radius: 5px;
           width: 100%;
+          margin-bottom: 16px;
         }
         .percent {
           position: absolute;
@@ -20,7 +21,7 @@ export default ({ progress }) => (
         }
         .bar {
           height: 20px;
-          background-color: #000;
+          background-color: #b99bd9;
           transition: width 2s;
           border: 1px;
           border-radius: 5px;
